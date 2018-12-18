@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDServer", "IDServer\IDServer.csproj", "{D63CDF0D-ACD5-46BE-B9BB-8AF33C965442}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IDServer", "IDServer\IDServer.csproj", "{D63CDF0D-ACD5-46BE-B9BB-8AF33C965442}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Docuemtns", "1. Docuemtns", "{BC17AB6B-C175-4794-A1EA-CC1EC47C08BD}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

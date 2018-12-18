@@ -1,0 +1,21 @@
+﻿@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+
+    var user = UserManager.GetUserAsync(User).Result;
+    var isAdmin = UserManager.IsInRoleAsync(user, "Admin").Result;
+}
+<ul class="nav nav-pills flex-column">
+    <li class="nav-item"><a class="nav-link @ManageNavPages.IndexNavClass(ViewContext)" id="profile" asp-page="./Index">个人资料</a></li>
+    <li class="nav-item"><a class="nav-link @ManageNavPages.ChangePasswordNavClass(ViewContext)" id="change-password" asp-page="./ChangePassword">密码修改</a></li>
+    @if (hasExternalLogins)
+    {
+        <li id="external-logins" class="nav-item"><a id="external-login" class="nav-link @ManageNavPages.ExternalLoginsNavClass(ViewContext)" asp-page="./ExternalLogins">External logins</a></li>
+    }
+
+    @if (isAdmin)
+    {
+        <li class="nav-item"><a class ="nav-link @ManageNavPages.UserListNavClass(ViewContext)" id="user-list" asp-page="./UserList">用户管理</a></li>
+    }
+</ul>
